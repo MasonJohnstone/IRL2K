@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Animated, Alert } from 'react-native';
-import MainLayout from './layouts/main';
-import LobbyLayout from './layouts/lobby';
+import MainLayout from './screens/main/layout';
+import LobbyLayout from './screens/lobby/layout';
 
 interface MainScreenProps {
   logout: () => void;
@@ -16,7 +16,7 @@ const MainScreen: React.FC<MainScreenProps> = ({ logout, email, token }) => {
     elo: '',
   });
 
-  const [layout, setLayout] = useState<string>('Main'); // Default layout
+  const [layout, setLayout] = useState<string>('main');
 
   useEffect(() => {
     if (email && token) {
@@ -44,35 +44,22 @@ const MainScreen: React.FC<MainScreenProps> = ({ logout, email, token }) => {
     }
   }, [email, token]);
 
-  const play = () => {
-    setLayout('Lobby');
-  };
-
-  const ready = () => 
-  {
-    
-  }
-
-  const selectmode = () => {
-    
-  }
-
   const renderLayout = () => {
     switch (layout) {
-      case 'Lobby':
+      case 'lobby':
         return (
           <LobbyLayout
             playerData={playerData}
             logout={logout}
-            ready={ready}
           />
         );
       default:
         return (
           <MainLayout
+          setLayout={ setLayout }
             playerData={playerData}
             logout={logout}
-            play={play}
+            token={token}
           />
         );
     }

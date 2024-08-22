@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert } from 'react-native';
-import Layout from './layout';
+import Layout from '@/screens/Auth/layout';
 
 interface AuthScreenProps {
   onLogin: (email: string, token: string) => void;

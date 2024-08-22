@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, ImageBackground, Text, TouchableOpacity } from 'react-native';
 
-import Background from '@/screens/components/background';
-import Header from '@/screens/components/header';
-import Content from '@/screens/components/content';
-import Container from '@/screens/components/container';
-import Subtitle from '@/screens/components/subtitle';
-import TextButton from '@/screens/components/textbutton';
-import TextInput from '@/screens/components/textinput';
+import Background from '@/components/background';
+import Header from '@/components/header';
+import Content from '@/components/content';
+import Container from '@/components/container';
+import Subtitle from '@/components/subtitle';
+import TextButton from '@/components/textbutton';
+import TextInput from '@/components/textinput';
 
 
 interface AuthScreenLayoutProps {
